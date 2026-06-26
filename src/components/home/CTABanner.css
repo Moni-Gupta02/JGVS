@@ -1,0 +1,59 @@
+.cta-banner {
+  position: relative;
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.cta-banner__bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1600&h=600&fit=crop')
+    center/cover no-repeat;
+}
+
+.cta-banner__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 61, 36, 0.85);
+}
+
+.cta-banner__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--color-white);
+  max-width: 700px;
+}
+
+.cta-banner__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.cta-banner__text {
+  font-size: 1.0625rem;
+  opacity: 0.9;
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+
+.cta-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .cta-banner__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-banner__actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}

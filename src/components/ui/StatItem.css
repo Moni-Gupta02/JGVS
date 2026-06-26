@@ -1,0 +1,38 @@
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-sm);
+  gap: 0.15rem;
+}
+
+.stat-item__icon {
+  font-size: 1.375rem;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.stat-item__value {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.stat-item__label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+  max-width: 120px;
+}
+
+@media (max-width: 768px) {
+  .stat-item__value {
+    font-size: 1.1rem;
+  }
+
+  .stat-item__label {
+    font-size: 0.7rem;
+  }
+}

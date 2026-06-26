@@ -1,0 +1,26 @@
+.impact-stats {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: var(--space-md) 0;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 10;
+}
+
+.impact-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: var(--space-sm);
+}
+
+@media (max-width: 1200px) {
+  .impact-stats__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .impact-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
