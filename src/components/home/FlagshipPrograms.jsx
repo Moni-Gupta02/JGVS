@@ -34,7 +34,18 @@ function FlagshipPrograms() {
             {FLAGSHIP_PROGRAMS.map((program) => (
               <article key={program.id} className="program-card">
                 <div className="program-card__image">
-                  <img src={program.image} alt={program.title} loading="lazy" />
+                  <img
+                    src={program.image}
+                    alt={program.title}
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    crossOrigin="anonymous"
+                    onError={(e) => {
+                      if (e.currentTarget.parentElement) {
+                        e.currentTarget.style.display = 'none';
+                      }
+                    }}
+                  />
                   <span className="program-card__icon" aria-hidden="true">
                     {program.icon}
                   </span>

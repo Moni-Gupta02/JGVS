@@ -35,7 +35,19 @@ function Card({
     >
       {image && (
         <div className="card__image-wrapper">
-          <img src={image} alt={imageAlt || title || ''} className="card__image" loading="lazy" />
+          <img
+            src={image}
+            alt={imageAlt || title || ''}
+            className="card__image"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            crossOrigin="anonymous"
+            onError={(e) => {
+              if (e.currentTarget.parentElement) {
+                e.currentTarget.parentElement.style.display = 'none';
+              }
+            }}
+          />
           {overlay && <div className="card__overlay">{overlay}</div>}
         </div>
       )}

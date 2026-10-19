@@ -1,3 +1,61 @@
+/* Registration Spotlight Banner */
+.about-saark__reg-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  background: linear-gradient(135deg, rgba(27, 94, 59, 0.08) 0%, rgba(76, 175, 80, 0.12) 100%);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.reg-banner__icon {
+  font-size: 2.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--color-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+.reg-banner__content {
+  flex: 1;
+}
+
+.reg-banner__badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-xs);
+}
+
+.reg-banner__title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.reg-banner__desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
 .about-saark__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -63,63 +121,139 @@
   line-height: 1.5;
 }
 
-.timeline {
+/* Horizontal Timeline */
+.timeline-horizontal {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-md);
+  position: relative;
+  padding-top: var(--space-sm);
+}
+
+.timeline-step {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  max-width: 700px;
-  margin: 0 auto;
   position: relative;
-  padding-left: var(--space-xl);
 }
 
-.timeline::before {
+.timeline-step::before {
   content: '';
   position: absolute;
+  top: 13px;
   left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
+  right: 0;
+  height: 3px;
+  background: var(--color-border);
+  z-index: 1;
+}
+
+.timeline-step:first-child::before {
+  left: 50%;
+}
+
+.timeline-step:last-child::before {
+  right: 50%;
+}
+
+.timeline-step--highlight::before {
   background: var(--color-accent);
 }
 
-.timeline__item {
+.timeline-step__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  padding: var(--space-md) 0 var(--space-md) var(--space-lg);
+  z-index: 2;
+  margin-bottom: var(--space-sm);
 }
 
-.timeline__item::before {
-  content: '';
-  position: absolute;
-  left: calc(-1 * var(--space-xl) - 4px);
-  top: 1.25rem;
-  width: 10px;
-  height: 10px;
+.timeline-step__dot {
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
+  background: var(--color-white);
+  border: 3px solid var(--color-accent);
+  display: block;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.timeline-step--highlight .timeline-step__dot {
   background: var(--color-accent);
-  border: 2px solid var(--color-white);
-  box-shadow: 0 0 0 2px var(--color-accent);
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.4);
 }
 
-.timeline__year {
+.timeline-step__year {
+  margin-top: 6px;
+  font-weight: 800;
+  font-size: 1.0625rem;
+  color: var(--color-primary-dark);
+}
+
+.timeline-step__card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-step--highlight .timeline-step__card {
+  border: 2px solid var(--color-accent);
+  background: #f7faf8;
+}
+
+.timeline-step__tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.6875rem;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(27, 94, 59, 0.1);
   color: var(--color-primary);
-  font-size: 0.875rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-xs);
 }
 
-.timeline__event {
+.timeline-step__tag--reg {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.timeline-step__event {
+  font-size: 0.8125rem;
   color: var(--color-text-muted);
-  font-size: 0.9375rem;
-  margin-top: var(--space-xs);
+  line-height: 1.5;
 }
 
 @media (max-width: 1024px) {
   .values-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .timeline-horizontal {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+
+  .timeline-step::before {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
+  .about-saark__reg-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+
   .about-saark__grid {
     grid-template-columns: 1fr;
   }
@@ -127,10 +261,18 @@
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .timeline-horizontal {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
   .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-horizontal {
     grid-template-columns: 1fr;
   }
 }

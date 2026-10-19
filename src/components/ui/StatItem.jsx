@@ -20,8 +20,10 @@ function StatItem({ icon, value, label, className = '' }) {
   return (
     <div className={`stat-item ${className}`}>
       <span className="stat-item__icon" aria-hidden="true">{displayIcon}</span>
-      <span className="stat-item__value">{value}</span>
-      <span className="stat-item__label">{label}</span>
+      <div className="stat-item__content">
+        <span className="stat-item__value">{value}</span>
+        <span className="stat-item__label">{label}</span>
+      </div>
     </div>
   );
 }

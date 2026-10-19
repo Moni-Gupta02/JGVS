@@ -16,16 +16,21 @@ function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__brand">
-            <Link to="/" className="footer__logo">
-              <span className="footer__logo-icon" aria-hidden="true">🌿</span>
-              <div>
-                <span className="footer__logo-name">SAARK</span>
-                <span className="footer__logo-sub">Philanthropy Foundation</span>
+            <Link to="/" className="footer__logo" aria-label="SAARK - One Step Towards Change">
+              <div className="footer__logo-box">
+                <img
+                  src="/logo.jpg"
+                  alt="SAARK - One Step Towards Change"
+                  className="footer__logo-img"
+                />
               </div>
             </Link>
+            <div className="footer__reg-tag">
+              🏛️ Started 2020 &bull; Registered in 2023 as per Section 8
+            </div>
             <p className="footer__about">
-              Empowering rural communities through education, healthcare, sustainable agriculture,
-              women empowerment, and environmental conservation across India.
+              Empowering communities through dedicated programs in Child Protection, Girls Improvement,
+              sustainable agriculture, women empowerment, education, and healthcare across India.
             </p>
             <div className="footer__social">
               {SOCIAL_LINKS.map((social) => (
@@ -98,7 +103,7 @@ function Footer() {
 
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
-          <p>&copy; {currentYear} {APP_CONFIG.name}. All rights reserved.</p>
+          <p>&copy; {currentYear} {APP_CONFIG.name} &bull; Started 2020 &bull; Registered 2023 as per Section 8. All rights reserved.</p>
           <nav className="footer__legal" aria-label="Legal links">
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms & Conditions</Link>

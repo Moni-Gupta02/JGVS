@@ -3,7 +3,12 @@ export const APP_CONFIG = {
   name: import.meta.env.VITE_APP_NAME || 'SAARK Philanthropy Foundation',
   tagline:
     import.meta.env.VITE_APP_TAGLINE ||
-    'Empowering Communities, Protecting Nature, Transforming Lives',
+    'One Step Towards Change - Empowering Communities, Protecting Nature, Transforming Lives',
+  registration:
+    'Started in 2020 | Registered in 2023 as per Section 8 of the Companies Act, 2013',
+  establishedYear: '2020',
+  registeredYear: '2023',
+  legalStatus: 'Registered under Section 8 (Non-Profit Company)',
   contact: {
     email: import.meta.env.VITE_CONTACT_EMAIL || 'info@saarkfoundation.org',
     phone: import.meta.env.VITE_CONTACT_PHONE || '+91-9876543210',
@@ -23,8 +28,8 @@ export const SOCIAL_LINKS = [
 ];
 
 export const TOP_BAR_LINKS = [
+  { label: 'Started 2020 • Regd. 2023 (Section 8)', path: '/about' },
   { label: 'News & Events', path: '/media/news' },
-  { label: 'Media', path: '/media' },
   { label: 'Careers', path: '/careers' },
   { label: 'Resources', path: '/resources' },
 ];
@@ -314,27 +319,36 @@ export const IMPACT_MAP_STATS = [
 export const NEWS_ITEMS = [
   {
     id: 1,
-    date: 'Jun 15, 2026',
-    title: 'SAARK Foundation wins National Award for Rural Development',
+    tag: 'Child Protection',
+    date: 'Active Program',
+    title: 'Working on Child Protection: Safe Spaces, Rights & Rehabilitation',
+    description:
+      'Providing child welfare, education access, prevention of child labor, psychological support, and safe shelter for children in vulnerable rural communities.',
     image:
-      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=120&h=80&fit=crop',
-    path: '/media/news/national-award',
+      'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=500&h=350&fit=crop',
+    path: '/programs/child-care',
   },
   {
     id: 2,
-    date: 'Jun 10, 2026',
-    title: 'Herbal Village Mission expands to 50 new villages',
+    tag: 'Girls Improvement',
+    date: 'Active Program',
+    title: 'Girls Improvement & Empowerment: Education & Life-Skills Mentorship',
+    description:
+      'Dedicated support for adolescent girls, including education scholarships, digital literacy, health & hygiene awareness, and leadership mentorship programs.',
     image:
-      'https://images.unsplash.com/photo-1466692476867-aef1dfb1e735?w=120&h=80&fit=crop',
-    path: '/media/news/herbal-expansion',
+      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=350&fit=crop',
+    path: '/programs/women-empowerment',
   },
   {
     id: 3,
-    date: 'Jun 5, 2026',
-    title: 'World Environment Day: 10,000 trees planted across India',
+    tag: 'Safeguarding',
+    date: 'Active Program',
+    title: 'Community Vigilance for Child Protection & Girl Child Well-being',
+    description:
+      'Grassroots village committees ensuring zero school dropout for girls, child rights safeguarding, and legal assistance for vulnerable families.',
     image:
-      'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=120&h=80&fit=crop',
-    path: '/media/news/environment-day',
+      'https://images.unsplash.com/photo-1488523785076-d742a933b820?w=500&h=350&fit=crop',
+    path: '/programs/child-care',
   },
 ];
 
@@ -387,7 +401,7 @@ export const ABOUT_SECTIONS = {
   vision:
     'A world where every community thrives in harmony with nature, empowered with education, health, and sustainable livelihoods.',
   mission:
-    'To empower rural and underserved communities through integrated programs in education, healthcare, agriculture, women empowerment, and environmental conservation.',
+    'To empower rural and underserved communities through integrated programs in education, child protection, healthcare, sustainable agriculture, women empowerment, and environmental conservation.',
   values: [
     { title: 'Integrity', description: 'Transparency and accountability in all our actions' },
     { title: 'Compassion', description: 'Serving with empathy and respect for all' },
@@ -396,11 +410,11 @@ export const ABOUT_SECTIONS = {
     { title: 'Collaboration', description: 'Working together with communities and partners' },
   ],
   journey: [
-    { year: '2010', event: 'SAARK Foundation established with education programs' },
-    { year: '2014', event: 'Expanded to women empowerment and SHG formation' },
-    { year: '2018', event: 'Launched Herbal Village Mission across 100 villages' },
-    { year: '2022', event: 'Reached 50,000+ lives impacted milestone' },
-    { year: '2026', event: 'Operating in 26 states with 1000+ community partners' },
+    { year: '2020', event: 'Started operations with grassroots child protection, girls welfare, and rural support' },
+    { year: '2023', event: 'Officially registered as per Section 8 of the Companies Act, 2013 (Non-Profit)' },
+    { year: '2024', event: 'Expanded dedicated programs for Child Protection and Girls Improvement & Leadership' },
+    { year: '2025', event: 'Scaled sustainable agriculture and herbal village missions across 100+ villages' },
+    { year: '2026', event: 'Operating across 26 states with 1000+ community partners, impacting 50,000+ lives' },
   ],
 };
 

@@ -32,7 +32,10 @@ function Hero() {
 
       <div className="container hero__content">
         <div className="hero__text">
-          <span className="hero__badge">{slide.badge}</span>
+          <div className="hero__badges-row">
+            <span className="hero__badge">{slide.badge}</span>
+            <span className="hero__reg-badge">🏛️ Started 2020 • Registered in 2023 as per Section 8</span>
+          </div>
           <h1 className="hero__title">
             {slide.title}{' '}
             <span className="hero__highlight">{slide.highlight}</span>
@@ -61,6 +64,13 @@ function Hero() {
                 src="https://images.unsplash.com/photo-1488523785076-d742a933b820?w=300&h=200&fit=crop"
                 alt="Watch our story"
                 loading="lazy"
+                referrerPolicy="no-referrer"
+                crossOrigin="anonymous"
+                onError={(e) => {
+                  if (e.currentTarget.parentElement) {
+                    e.currentTarget.parentElement.style.display = 'none';
+                  }
+                }}
               />
               <button type="button" className="video-card__play" aria-label="Play video">
                 ▶

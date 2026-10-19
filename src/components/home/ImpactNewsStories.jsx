@@ -4,7 +4,7 @@ import {
   NEWS_ITEMS,
   SUCCESS_STORIES,
 } from '../../constants';
-import { Button, Card } from '../ui';
+import { Button, SectionHeader } from '../ui';
 import './ImpactNewsStories.css';
 
 function ImpactNewsStories() {
@@ -12,84 +12,115 @@ function ImpactNewsStories() {
   const otherStories = SUCCESS_STORIES.filter((s) => !s.featured);
 
   return (
-    <section className="section section--alt impact-news">
+    <section className="section section--alt impact-news" id="latest">
       <div className="container">
-        <div className="impact-news__grid">
-          {/* Impact Map */}
-          <div className="impact-card">
-            <h3 className="impact-card__title">Our Impact Across India</h3>
-            <div className="impact-card__content">
-              <div className="impact-card__map" aria-hidden="true">
-                <div className="india-map">
-                  <span className="map-pin map-pin--1">📍</span>
-                  <span className="map-pin map-pin--2">📍</span>
-                  <span className="map-pin map-pin--3">📍</span>
-                  <span className="map-pin map-pin--4">📍</span>
-                  <span className="map-pin map-pin--5">📍</span>
+        {/* Latest Focus: Working on Child Protection & Girls Improvement */}
+        <div className="latest-focus-section">
+          <SectionHeader
+            title="Latest: Working on Child Protection & Girls Improvement"
+            subtitle="Transforming futures by safeguarding children from harm, protecting rights, and empowering adolescent girls across India"
+          />
+
+          <div className="latest-focus__grid">
+            {NEWS_ITEMS.map((item) => (
+              <article key={item.id} className="focus-initiative-card">
+                <div className="initiative-card__image-wrapper">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="initiative-card__image"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    crossOrigin="anonymous"
+                    onError={(e) => {
+                      if (e.currentTarget.parentElement) {
+                        e.currentTarget.parentElement.style.display = 'none';
+                      }
+                    }}
+                  />
+                  <span className="initiative-card__tag">{item.tag || 'Focus Area'}</span>
                 </div>
-              </div>
-              <ul className="impact-card__stats">
+                <div className="initiative-card__body">
+                  <div className="initiative-card__meta">
+                    <span className="initiative-card__status">● {item.date}</span>
+                  </div>
+                  <h3 className="initiative-card__title">{item.title}</h3>
+                  <p className="initiative-card__desc">{item.description}</p>
+                  <Link to={item.path} className="initiative-card__link">
+                    Explore Initiative →
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* Horizontal Impact & Stories Grid */}
+        <div className="impact-stories__horizontal">
+          {/* Impact Across India */}
+          <div className="impact-card-wide">
+            <div className="impact-card-wide__header">
+              <h3 className="impact-card__title">Our Impact Across India</h3>
+              <Button to="/impact" variant="outline-light" size="sm">
+                View Impact Report →
+              </Button>
+            </div>
+            <div className="impact-card-wide__content">
+              <ul className="impact-stats-horizontal">
                 {IMPACT_MAP_STATS.map((stat) => (
-                  <li key={stat.label}>
+                  <li key={stat.label} className="impact-stat-pill">
                     <span className="impact-stat-value">{stat.value}</span>
                     <span className="impact-stat-label">{stat.label}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <Button to="/impact" variant="outline-light" size="sm" className="impact-card__btn">
-              View Impact Report
-            </Button>
           </div>
 
-          {/* News */}
-          <div className="news-column">
-            <h3 className="column-title">Latest News & Events</h3>
-            {NEWS_ITEMS.map((item) => (
-              <Card
-                key={item.id}
-                variant="news"
-                image={item.image}
-                imageAlt={item.title}
-                title={item.title}
-                to={item.path}
-                footer={
-                  <div className="news-meta">
-                    <time dateTime={item.date}>{item.date}</time>
-                    <Link to={item.path} className="news-link">Read More →</Link>
-                  </div>
-                }
-              />
-            ))}
-            <Button to="/media/news" variant="primary" size="sm" fullWidth>
-              View All News
-            </Button>
-          </div>
-
-          {/* Stories */}
-          <div className="stories-column">
+          {/* Stories of Change */}
+          <div className="stories-section-horizontal">
             <h3 className="column-title">Stories of Change</h3>
-            {featuredStory && (
-              <article className="featured-story">
-                <img
-                  src={featuredStory.image}
-                  alt={featuredStory.title}
-                  className="featured-story__image"
-                  loading="lazy"
-                />
-                <h4 className="featured-story__title">{featuredStory.title}</h4>
-                <p className="featured-story__excerpt">{featuredStory.excerpt}</p>
-                <Link to={featuredStory.path} className="featured-story__link">
-                  Read Her Story →
-                </Link>
-              </article>
-            )}
-            <div className="story-thumbs">
-              {otherStories.map((story) => (
-                <Link key={story.id} to={story.path} className="story-thumb">
-                  <img src={story.image} alt={story.title} loading="lazy" />
-                </Link>
-              ))}
+            <div className="stories-horizontal-row">
+              {featuredStory && (
+                <article className="featured-story-horizontal">
+                  <img
+                    src={featuredStory.image}
+                    alt={featuredStory.title}
+                    className="featured-story__image-h"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    crossOrigin="anonymous"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                  <div className="featured-story__body-h">
+                    <span className="story-badge">Featured Story</span>
+                    <h4 className="featured-story__title">{featuredStory.title}</h4>
+                    <p className="featured-story__excerpt">{featuredStory.excerpt}</p>
+                    <Link to={featuredStory.path} className="featured-story__link">
+                      Read Her Story →
+                    </Link>
+                  </div>
+                </article>
+              )}
+              <div className="story-thumbs-horizontal">
+                {otherStories.map((story) => (
+                  <Link key={story.id} to={story.path} className="story-thumb-card" title={story.title}>
+                    <img
+                      src={story.image}
+                      alt={story.title}
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                      crossOrigin="anonymous"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                    <span className="story-thumb-card__title">{story.title}</span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

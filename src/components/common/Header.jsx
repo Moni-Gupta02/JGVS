@@ -84,7 +84,10 @@ function Header() {
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="top-bar">
         <div className="container top-bar__inner">
-          <p className="top-bar__tagline">{APP_CONFIG.tagline}</p>
+          <div className="top-bar__left">
+            <p className="top-bar__tagline">{APP_CONFIG.tagline}</p>
+            <span className="top-bar__reg-pill">Started 2020 • Regd. 2023 as per Section 8</span>
+          </div>
           <div className="top-bar__right">
             <nav className="top-bar__links" aria-label="Utility navigation">
               {TOP_BAR_LINKS.map((link, i) => (
@@ -116,12 +119,12 @@ function Header() {
 
       <div className="main-nav">
         <div className="container main-nav__inner">
-          <Link to="/" className="logo" onClick={close}>
-            <span className="logo__icon" aria-hidden="true">🌿</span>
-            <div className="logo__text">
-              <span className="logo__name">SAARK</span>
-              <span className="logo__sub">Philanthropy Foundation</span>
-            </div>
+          <Link to="/" className="logo" onClick={close} aria-label="SAARK - One Step Towards Change">
+            <img
+              src="/logo.jpg"
+              alt="SAARK - One Step Towards Change"
+              className="logo__img"
+            />
           </Link>
 
           <nav className={`nav ${isOpen ? 'nav--open' : ''}`} aria-label="Main navigation">
