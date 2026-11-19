@@ -474,3 +474,5 @@ export const GRANT_STEPS = [
   { title: 'Interview', description: 'Shortlisted applicants may be invited for a brief discussion.' },
   { title: 'Approval', description: 'Approved grants are disbursed in agreed milestones.' },
 ];
+
+export * from './donation';

@@ -1,0 +1,1120 @@
+/* ==========================================================================
+   DONATION SECTION STYLING
+   High-trust, clean, responsive presentation for SAARK Philanthropy Foundation
+   ========================================================================== */
+
+.donation-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Hero & Trust Banner */
+.donation-hero {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  padding: var(--space-xl) var(--space-md);
+  background: linear-gradient(180deg, rgba(27, 94, 59, 0.08) 0%, rgba(27, 94, 59, 0.02) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.donation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e8f5e9;
+  color: var(--color-primary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.donation-hero__title {
+  font-size: clamp(1.75rem, 3.5vw, 2.375rem);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.donation-hero__subtitle {
+  max-width: 680px;
+  margin: 0 auto var(--space-lg);
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.donation-hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm) var(--space-md);
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  background: var(--color-white);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.trust-pill svg {
+  color: var(--color-accent);
+}
+
+/* Amount Selector & Calculator */
+.donation-calculator {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.donation-calculator__header {
+  margin-bottom: var(--space-md);
+}
+
+.donation-calculator__header h3 {
+  font-size: 1.125rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 2px;
+}
+
+.donation-calculator__hint {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.donation-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.tier-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 14px;
+  background: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.tier-btn:hover {
+  border-color: var(--color-accent);
+  background: #f4faf6;
+  transform: translateY(-1px);
+}
+
+.tier-btn--active {
+  border-color: var(--color-primary);
+  background: #edf7f1;
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.tier-btn__amount {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  font-family: var(--font-sans);
+}
+
+.tier-btn__title {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+.tier-btn--active .tier-btn__amount {
+  color: var(--color-primary);
+}
+
+.donation-custom-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px dashed var(--color-border);
+}
+
+.donation-custom-input {
+  position: relative;
+  max-width: 380px;
+}
+
+.donation-custom-input .currency-symbol {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.donation-custom-input input {
+  width: 100%;
+  padding: 10px 14px 10px 32px;
+  font-size: 0.9375rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: var(--font-sans);
+}
+
+.donation-custom-input input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 94, 59, 0.12);
+}
+
+.donation-impact-banner {
+  background: #f0f7f3;
+  border-left: 3px solid var(--color-accent);
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: var(--color-primary-dark);
+}
+
+.highlight-amount {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Method Tabs */
+.donation-method-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 2px;
+  overflow-x: auto;
+}
+
+.method-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  border: 1px solid transparent;
+  border-bottom: none;
+  background: transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.method-tab:hover {
+  color: var(--color-primary);
+  background: var(--color-bg);
+}
+
+.method-tab--active {
+  color: var(--color-primary);
+  background: var(--color-white);
+  border-color: var(--color-border);
+  border-bottom: 2px solid var(--color-white);
+  margin-bottom: -2px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* Payment Methods Grid */
+.donation-methods-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+@media (min-width: 900px) {
+  .donation-methods-grid.active-both {
+    grid-template-columns: 1fr 1.1fr;
+    align-items: start;
+  }
+}
+
+/* Payment Card Common Styles */
+.payment-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.payment-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.payment-card__icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #e8f5e9;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bank-icon-wrap {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.payment-card__badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  background: #e8f5e9;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-bottom: 2px;
+}
+
+.bank-badge {
+  color: #0d47a1;
+  background: #e3f2fd;
+}
+
+.payment-card__title {
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+/* -------------------------------------------------------------
+   SCANNER FRAME STYLING
+   Organized, framed scanner that looks professional and high tech
+   ------------------------------------------------------------- */
+.scanner-frame-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-sm) 0 var(--space-lg);
+}
+
+.scanner-frame {
+  position: relative;
+  background: #ffffff;
+  padding: 22px 18px 16px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(27, 94, 59, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #d5e5db;
+  text-align: center;
+  max-width: 320px;
+  width: 100%;
+}
+
+/* Scanner Corner Markers */
+.scanner-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: var(--color-primary);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.corner-tl {
+  top: 10px;
+  left: 10px;
+  border-width: 3px 0 0 3px;
+  border-top-left-radius: 8px;
+}
+
+.corner-tr {
+  top: 10px;
+  right: 10px;
+  border-width: 3px 3px 0 0;
+  border-top-right-radius: 8px;
+}
+
+.corner-bl {
+  bottom: 10px;
+  left: 10px;
+  border-width: 0 0 3px 3px;
+  border-bottom-left-radius: 8px;
+}
+
+.corner-br {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 3px 3px 0;
+  border-bottom-right-radius: 8px;
+}
+
+.scanner-header-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.scanner-img-container {
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px dashed #c0d8cb;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.scanner-img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.scanner-footer-tag {
+  margin-top: 10px;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.hdfc-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #004c8f;
+}
+
+.hdfc-logo-box {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: #ed1c24;
+  position: relative;
+  border-radius: 2px;
+}
+
+.hdfc-logo-box::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #004c8f;
+  top: 4px;
+  left: 4px;
+}
+
+/* UPI ID Box */
+.upi-id-box {
+  background: #f4faf6;
+  border: 1.5px solid #d0e8db;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-bottom: var(--space-md);
+}
+
+.upi-id-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.upi-id-value-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.upi-id-code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  word-break: break-all;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid #b8dcce;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.copy-btn--copied {
+  background: #2e7d32 !important;
+  color: #ffffff !important;
+  border-color: #2e7d32 !important;
+}
+
+.copy-btn--primary {
+  background: #f0f7f4;
+  border-color: #b3d7c5;
+}
+
+/* Pay directly via UPI App on Mobile */
+.upi-direct-action {
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+.btn-upi-pay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: var(--color-white) !important;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  box-shadow: 0 4px 12px rgba(27, 94, 59, 0.2);
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.btn-upi-pay:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.upi-direct-note {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* Supported Apps */
+.supported-apps {
+  margin-bottom: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.supported-apps__title {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.supported-apps__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.app-chip {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* How to Scan Steps */
+.how-to-scan {
+  background: #f9fbf9;
+  border-radius: var(--radius-md);
+  padding: 12px;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scan-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.scan-step__num {
+  width: 18px;
+  height: 18px;
+  background: #d4ebd9;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: 0.6875rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* -------------------------------------------------------------
+   BANK DETAILS CARD STYLING
+   Organized, clear, verified bank account information
+   ------------------------------------------------------------- */
+.bank-institution-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #f4f8fc;
+  border: 1px solid #d2e4f5;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-bottom: var(--space-md);
+}
+
+.bank-logo-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hdfc-logo-square {
+  width: 32px;
+  height: 32px;
+  background: #ed1c24;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hdfc-logo-square .inner-blue {
+  width: 14px;
+  height: 14px;
+  background: #004c8f;
+  border-radius: 2px;
+}
+
+.bank-logo-badge strong {
+  display: block;
+  font-size: 1rem;
+  color: #004c8f;
+}
+
+.branch-meta {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.account-nature-pill {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #ffffff;
+  color: #004c8f;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid #b8d7f2;
+}
+
+.account-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: var(--space-lg);
+}
+
+.account-detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.account-detail-item.highlight-item {
+  background: #ffffff;
+  border: 1.5px solid #c2e0cf;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.account-detail-item.address-item {
+  background: #fafafa;
+  align-items: flex-start;
+}
+
+.account-detail-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.detail-value {
+  color: var(--color-text);
+  font-size: 0.9375rem;
+}
+
+.detail-value.monospace {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+.detail-value.large-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.detail-address-text {
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.copy-icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.copy-icon-btn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.copy-icon-btn--copied {
+  background: #2e7d32 !important;
+  color: #ffffff !important;
+  border-color: #2e7d32 !important;
+}
+
+.account-detail-grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.sub-detail-col {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sub-detail-value {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.sub-detail-value.monospace {
+  font-family: monospace;
+}
+
+/* Bank Actions Row */
+.bank-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn-copy-all {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 11px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-copy-all:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-copy-all--copied {
+  background: #2e7d32 !important;
+}
+
+.btn-view-passbook {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: #004c8f;
+  border: 1.5px solid #b8d7f2;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-view-passbook:hover {
+  background: #eaf3fb;
+}
+
+/* -------------------------------------------------------------
+   TAX RECEIPT & CONFIRMATION ASSISTANCE
+   ------------------------------------------------------------- */
+.tax-receipt-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.tax-receipt-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 860px) {
+  .tax-receipt-grid {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+  }
+}
+
+.tax-receipt-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: var(--space-md);
+}
+
+.tax-receipt-header svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.tax-receipt-header h3 {
+  font-size: 1.1875rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 4px;
+}
+
+.tax-receipt-header p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.receipt-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-accent);
+}
+
+.tax-receipt-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.action-btn--whatsapp {
+  background: #25d366;
+  color: #ffffff !important;
+}
+
+.action-btn--whatsapp:hover {
+  background: #1eb956;
+  transform: translateY(-1px);
+}
+
+.action-btn--email {
+  background: #ffffff;
+  color: var(--color-primary-dark) !important;
+  border: 1.5px solid var(--color-border);
+}
+
+.action-btn--email:hover {
+  border-color: var(--color-primary);
+  background: #f4faf6;
+}
+
+.receipt-direct-contact {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* -------------------------------------------------------------
+   TRUST FEATURES ROW
+   ------------------------------------------------------------- */
+.trust-features-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.trust-feature {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.trust-feature__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #edf7f1;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+}
+
+.trust-feature h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: var(--color-primary-dark);
+}
+
+.trust-feature p {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+
+/* -------------------------------------------------------------
+   MODAL LIGHTBOX (BANK PASSBOOK)
+   ------------------------------------------------------------- */
+.proof-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  animation: fadeIn 0.2s ease;
+}
+
+.proof-modal-content {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  max-width: 720px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.proof-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.proof-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.proof-modal-title svg {
+  color: #004c8f;
+}
+
+.proof-modal-title h4 {
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+.proof-modal-title span {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.proof-modal-close {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.proof-modal-close:hover {
+  color: var(--color-text);
+}
+
+.proof-modal-body {
+  padding: 16px;
+  overflow-y: auto;
+  background: #111111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proof-modal-img {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.proof-modal-footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.8125rem;
+  background: var(--color-bg);
+}
+
+.btn-modal-done {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .account-detail-grid-row {
+    grid-template-columns: 1fr;
+  }
+
+  .scanner-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .donation-hero__title {
+    font-size: 1.5rem;
+  }
+}

@@ -66,6 +66,7 @@ const router = createBrowserRouter([
       { path: 'about', element: <AboutPage /> },
       { path: 'contact', element: <ContactPage /> },
       { path: 'grants', element: <GrantPage /> },
+      { path: 'donate', element: <DonatePage /> },
       { path: 'programs', element: <ProgramsPage /> },
       { path: 'programs/:slug', element: withSuspense(GenericPage) },
       { path: 'projects', element: withSuspense(GenericPage) },

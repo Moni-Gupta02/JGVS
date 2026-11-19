@@ -1,5 +1,8 @@
 import PageTemplate from './PageTemplate';
 import './PageTemplate.css';
+import { BANK_DETAILS } from '../constants';
+
+export { default as DonatePage } from './DonatePage';
 
 function createPortalPage(title, subtitle, features = []) {
   return function PortalPage() {
@@ -25,14 +28,75 @@ function createPortalPage(title, subtitle, features = []) {
 }
 
 /* Donor Portal */
-export const DonatePage = createPortalPage('Online Donation', 'Support our mission with a secure donation', [
-  { title: 'One-Time Donation', description: 'Make a single contribution to support our programs.' },
-  { title: 'Monthly Giving', description: 'Become a sustaining donor with recurring monthly gifts.' },
-  { title: 'Corporate Giving', description: 'Partner with us through CSR initiatives and corporate donations.' },
-  { title: 'In-Kind Donations', description: 'Contribute materials, equipment, or services.' },
-]);
+export function TaxReceiptPage() {
+  const whatsappUrl = `https://wa.me/918090517004?text=${encodeURIComponent(
+    'Hello SAARK Philanthropy Foundation, I have made a donation and would like to request an 80G Tax Exemption Receipt. Please let me know the details required.'
+  )}`;
+  const mailtoUrl = `mailto:info@saarkfoundation.org?subject=${encodeURIComponent(
+    '80G Tax Exemption Receipt Request'
+  )}`;
 
-export const TaxReceiptPage = createPortalPage('Tax Receipt', 'Download your 80G tax exemption receipts');
+  return (
+    <PageTemplate
+      title="80G Tax Exemption Receipt"
+      subtitle="Claim your income tax deduction receipt for donations made to SAARK Philanthropy Foundation"
+    >
+      <div className="tax-receipt-portal-box">
+        <div className="tax-info-callout">
+          <h3>How to Receive Your 80G Certificate</h3>
+          <p>
+            Under Section 80G of the Income Tax Act, 1961, all eligible donations to SAARK Philanthropy
+            Foundation qualify for 50% tax deductions.
+          </p>
+        </div>
+
+        <div className="receipt-process-steps">
+          <div className="receipt-step-card">
+            <span className="step-badge">1</span>
+            <h4>Make Transfer</h4>
+            <p>
+              Transfer via UPI (<strong>{BANK_DETAILS.upiId}</strong>) or NEFT/IMPS to Account No.{' '}
+              <strong>{BANK_DETAILS.accountNumber}</strong> (IFSC: <strong>{BANK_DETAILS.ifscCode}</strong>).
+            </p>
+          </div>
+
+          <div className="receipt-step-card">
+            <span className="step-badge">2</span>
+            <h4>Submit Details</h4>
+            <p>
+              Share your payment screenshot, UTR / transaction number, PAN number, donor name, and
+              address.
+            </p>
+          </div>
+
+          <div className="receipt-step-card">
+            <span className="step-badge">3</span>
+            <h4>Receive Receipt</h4>
+            <p>
+              Our finance team will verify the entry and issue your digitally signed Form 10BE / 80G tax
+              receipt within 24–48 hours.
+            </p>
+          </div>
+        </div>
+
+        <div className="tax-receipt-contact-row">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="portal-receipt-btn portal-receipt-btn--wa"
+          >
+            Request Receipt on WhatsApp (+91 8090517004)
+          </a>
+          <a href={mailtoUrl} className="portal-receipt-btn portal-receipt-btn--mail">
+            Email Receipt Request (info@saarkfoundation.org)
+          </a>
+        </div>
+      </div>
+    </PageTemplate>
+  );
+}
+
 export const DonationHistoryPage = createPortalPage('Donation History', 'View your past contributions');
 export const DonorImpactReportsPage = createPortalPage('Impact Reports', 'See how your donations are making a difference');
 

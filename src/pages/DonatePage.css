@@ -1,0 +1,10 @@
+.donate-page-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--container-padding);
+}
+
+.portal-main .donate-page-container {
+  padding: 0;
+}
