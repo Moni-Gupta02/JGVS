@@ -1,25 +1,16 @@
 import { useState } from 'react';
-import { BANK_DETAILS, DONATION_TIERS, UPI_APPS } from '../../constants';
-import { Button } from '../ui';
+import { BANK_DETAILS, UPI_APPS } from '../../constants';
 import './DonationSection.css';
 
 export function DonationSection({ showHero = false, compact = false }) {
-  const [selectedTier, setSelectedTier] = useState(1000);
-  const [customAmount, setCustomAmount] = useState('');
   const [copiedField, setCopiedField] = useState(null);
   const [showProofModal, setShowProofModal] = useState(false);
   const [activeTab, setActiveTab] = useState('both'); // 'both', 'upi', 'bank'
 
-  const currentAmount = customAmount ? parseFloat(customAmount) || 0 : selectedTier;
-
-  // Build dynamic UPI intent URI
-  const upiPayUri = currentAmount > 0
-    ? `upi://pay?ver=01&mode=01&purpose=00&mc=0000&qrMedium=02&pa=${BANK_DETAILS.upiId}&pn=${encodeURIComponent(
-        BANK_DETAILS.upiPayeeName
-      )}&am=${currentAmount}&cu=INR`
-    : `upi://pay?ver=01&mode=01&purpose=00&mc=0000&qrMedium=02&pa=${BANK_DETAILS.upiId}&pn=${encodeURIComponent(
-        BANK_DETAILS.upiPayeeName
-      )}`;
+  // Standard UPI intent URI without pre-set amount (donor enters amount in their UPI app)
+  const upiPayUri = `upi://pay?ver=01&mode=01&purpose=00&mc=0000&qrMedium=02&pa=${BANK_DETAILS.upiId}&pn=${encodeURIComponent(
+    BANK_DETAILS.upiPayeeName
+  )}`;
 
   const handleCopy = (text, fieldName) => {
     if (navigator?.clipboard?.writeText) {
@@ -53,16 +44,12 @@ Branch Address: ${BANK_DETAILS.branchAddress}`;
   };
 
   const whatsappUrl = `https://wa.me/918090517004?text=${encodeURIComponent(
-    `Hello SAARK Philanthropy Foundation, I have made a donation of ${
-      currentAmount ? `₹${currentAmount}` : ''
-    }. Please find attached payment screenshot. Kindly provide 80G tax receipt.`
+    'Hello SAARK Philanthropy Foundation, I have made a donation towards your programs. Please find attached the payment screenshot. Kindly provide my 80G tax receipt.'
   )}`;
 
   const emailSubject = encodeURIComponent('Donation Confirmation & 80G Receipt Request');
   const emailBody = encodeURIComponent(
-    `Dear SAARK Philanthropy Foundation Team,\n\nI have contributed a donation towards your community programs.\nAmount: ${
-      currentAmount ? `₹${currentAmount}` : ''
-    }\nTransaction / UTR Reference:\nDate of Transfer:\nDonor Full Name:\nPAN Number (for 80G):\nMobile Number:\n\nPlease find attached the transfer receipt screenshot.\n\nThank you!`
+    `Dear SAARK Philanthropy Foundation Team,\n\nI have contributed a donation towards your community programs.\n\nTransaction / UTR Reference:\nDate of Transfer:\nDonor Full Name:\nPAN Number (for 80G):\nMobile Number:\n\nPlease find attached the transfer receipt screenshot.\n\nThank you!`
   );
   const mailtoUrl = `mailto:info@saarkfoundation.org?subject=${emailSubject}&body=${emailBody}`;
 
@@ -95,61 +82,6 @@ Branch Address: ${BANK_DETAILS.branchAddress}`;
         </div>
       )}
 
-      {/* Preset Amount Selector */}
-      <div className="donation-calculator card">
-        <div className="donation-calculator__header">
-          <h3>Choose Contribution Amount</h3>
-          <span className="donation-calculator__hint">Select an impact tier or enter custom amount</span>
-        </div>
-
-        <div className="donation-tiers-grid">
-          {DONATION_TIERS.map((tier) => {
-            const isSelected = selectedTier === tier.amount && !customAmount;
-            return (
-              <button
-                key={tier.amount}
-                type="button"
-                className={`tier-btn ${isSelected ? 'tier-btn--active' : ''}`}
-                onClick={() => {
-                  setSelectedTier(tier.amount);
-                  setCustomAmount('');
-                }}
-              >
-                <span className="tier-btn__amount">{tier.label}</span>
-                <span className="tier-btn__title">{tier.title}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="donation-custom-row">
-          <div className="donation-custom-input">
-            <span className="currency-symbol">₹</span>
-            <input
-              type="number"
-              min="1"
-              step="50"
-              placeholder="Or enter custom amount in INR"
-              value={customAmount}
-              onChange={(e) => {
-                setCustomAmount(e.target.value);
-                if (e.target.value) setSelectedTier(null);
-              }}
-              aria-label="Custom donation amount"
-            />
-          </div>
-          {currentAmount > 0 && (
-            <div className="donation-impact-banner">
-              <strong>Your Impact:</strong> Contributing{' '}
-              <span className="highlight-amount">₹{currentAmount.toLocaleString('en-IN')}</span>{' '}
-              {customAmount
-                ? 'provides immediate support where the need is highest.'
-                : DONATION_TIERS.find((t) => t.amount === selectedTier)?.description}
-            </div>
-          )}
-        </div>
-      </div>
-
       {/* Tabs Switcher for Mobile / Desktop */}
       <div className="donation-method-tabs" role="tablist">
         <button
@@ -177,7 +109,7 @@ Branch Address: ${BANK_DETAILS.branchAddress}`;
           className={`method-tab ${activeTab === 'bank' ? 'method-tab--active' : ''}`}
           onClick={() => setActiveTab('bank')}
         >
-          <BankIcon /> Bank Account Transfer
+          <BankIcon /> Bank Account Details
         </button>
       </div>
 
@@ -251,7 +183,7 @@ Branch Address: ${BANK_DETAILS.branchAddress}`;
             {/* Pay Directly Button for Mobile */}
             <div className="upi-direct-action">
               <a href={upiPayUri} className="btn-upi-pay">
-                <span>📱 Pay {currentAmount > 0 ? `₹${currentAmount.toLocaleString('en-IN')}` : ''} via UPI App</span>
+                <span>📱 Pay via UPI App</span>
               </a>
               <small className="upi-direct-note">
                 (Tap to automatically open Google Pay, PhonePe, Paytm, or BHIM on your phone)
