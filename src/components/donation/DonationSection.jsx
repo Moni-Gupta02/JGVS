@@ -366,13 +366,13 @@ Branch Address: ${BANK_DETAILS.branchAddress}`;
                 )}
               </button>
 
-              <button
+              {/* <button
                 type="button"
                 className="btn-view-passbook"
                 onClick={() => setShowProofModal(true)}
               >
                 <EyeIcon /> View Bank Passbook Proof
-              </button>
+              </button> */}
             </div>
           </div>
         )}
