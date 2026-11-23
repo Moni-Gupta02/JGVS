@@ -88,6 +88,7 @@ export const PORTAL_LINKS = [
     path: '/volunteer',
     items: [
       { label: 'Registration', path: '/volunteer/register' },
+      { label: 'Internship Application', path: '/volunteer/internship' },
       { label: 'Training', path: '/volunteer/training' },
       { label: 'Assignments', path: '/volunteer/assignments' },
       { label: 'Certificates', path: '/volunteer/certificates' },

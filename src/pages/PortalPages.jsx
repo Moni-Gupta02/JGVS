@@ -3,6 +3,8 @@ import './PageTemplate.css';
 import { BANK_DETAILS } from '../constants';
 
 export { default as DonatePage } from './DonatePage';
+export { default as VolunteerRegisterPage } from './VolunteerRegisterPage';
+export { default as InternshipPage } from './InternshipPage';
 
 function createPortalPage(title, subtitle, features = []) {
   return function PortalPage() {
@@ -101,13 +103,6 @@ export const DonationHistoryPage = createPortalPage('Donation History', 'View yo
 export const DonorImpactReportsPage = createPortalPage('Impact Reports', 'See how your donations are making a difference');
 
 /* Volunteer Portal */
-export const VolunteerRegisterPage = createPortalPage('Volunteer Registration', 'Join our team of changemakers', [
-  { title: 'Field Volunteer', description: 'Work directly with communities in rural areas.' },
-  { title: 'Skills-Based', description: 'Contribute your professional expertise remotely or on-site.' },
-  { title: 'Event Volunteer', description: 'Help organize and run foundation events and camps.' },
-  { title: 'Virtual Volunteer', description: 'Support our mission from anywhere in the world.' },
-]);
-
 export const VolunteerTrainingPage = createPortalPage('Training', 'Access training modules and resources');
 export const VolunteerAssignmentsPage = createPortalPage('Assignments', 'View and manage your volunteer assignments');
 export const VolunteerCertificatesPage = createPortalPage('Certificates', 'Download your volunteer certificates');

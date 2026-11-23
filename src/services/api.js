@@ -72,3 +72,11 @@ export const grantService = {
       body: JSON.stringify(data),
     }),
 };
+
+export const internshipService = {
+  apply: (data) =>
+    apiFetch('/internships/apply', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }),
+};
