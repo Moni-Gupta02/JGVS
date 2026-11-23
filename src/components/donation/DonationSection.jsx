@@ -316,7 +316,7 @@ Branch Address: ${BANK_DETAILS.branchAddress}`;
               </div>
 
               {/* Account Type & Product Code */}
-              <div className="account-detail-grid-row">
+              {/* <div className="account-detail-grid-row">
                 <div className="sub-detail-col">
                   <span className="detail-label">Account Type</span>
                   <span className="sub-detail-value">{BANK_DETAILS.accountType}</span>
@@ -329,23 +329,23 @@ Branch Address: ${BANK_DETAILS.branchAddress}`;
                   <span className="detail-label">MICR Code</span>
                   <span className="sub-detail-value monospace">{BANK_DETAILS.micrCode}</span>
                 </div>
-              </div>
+              </div> */}
 
               {/* Branch Address */}
-              <div className="account-detail-item address-item">
+              {/* <div className="account-detail-item address-item">
                 <div className="account-detail-item__meta">
                   <span className="detail-label">Branch Address</span>
                   <span className="detail-address-text">{BANK_DETAILS.branchAddress}</span>
                 </div>
-              </div>
+              </div> */}
 
               {/* Registered Foundation Address */}
-              <div className="account-detail-item address-item">
+              {/* <div className="account-detail-item address-item">
                 <div className="account-detail-item__meta">
                   <span className="detail-label">Registered Office Address</span>
                   <span className="detail-address-text">{BANK_DETAILS.registeredAddress}</span>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Actions: Copy All Details & View Passbook */}
